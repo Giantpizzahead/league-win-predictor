@@ -1,0 +1,310 @@
+{
+	"Events": [
+		{
+			"EventID": 0,
+			"EventName": "GameStart",
+			"EventTime": 0.06304802000522614
+		},
+		{
+			"EventID": 1,
+			"EventName": "MinionsSpawning",
+			"EventTime": 65.06622314453125
+		},
+		{
+			"Assisters": [],
+			"EventID": 2,
+			"EventName": "TurretKilled",
+			"EventTime": 303.8766784667969,
+			"KillerName": "Wukong Bot",
+			"TurretKilled": "Turret_T1_R_03_A"
+		},
+		{
+			"EventID": 3,
+			"EventName": "FirstBrick",
+			"EventTime": 303.8766784667969,
+			"KillerName": "Wukong Bot"
+		},
+		{
+			"Assisters": [],
+			"DragonType": "Water",
+			"EventID": 4,
+			"EventName": "DragonKill",
+			"EventTime": 429.4667053222656,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		},
+		{
+			"Assisters": [],
+			"EventID": 5,
+			"EventName": "HeraldKill",
+			"EventTime": 522.3300170898438,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		},
+		{
+			"Assisters": [],
+			"EventID": 6,
+			"EventName": "ChampionKill",
+			"EventTime": 539.9479370117188,
+			"KillerName": "krownetic",
+			"VictimName": "Wukong Bot"
+		},
+		{
+			"EventID": 7,
+			"EventName": "FirstBlood",
+			"EventTime": 539.9479370117188,
+			"Recipient": "krownetic"
+		},
+		{
+			"Assisters": [],
+			"EventID": 8,
+			"EventName": "TurretKilled",
+			"EventTime": 648.7913208007813,
+			"KillerName": "krownetic",
+			"TurretKilled": "Turret_T2_C_05_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 9,
+			"EventName": "ChampionKill",
+			"EventTime": 749.9190063476563,
+			"KillerName": "krownetic",
+			"VictimName": "Wukong Bot"
+		},
+		{
+			"Assisters": [],
+			"EventID": 10,
+			"EventName": "ChampionKill",
+			"EventTime": 898.4810180664063,
+			"KillerName": "krownetic",
+			"VictimName": "Wukong Bot"
+		},
+		{
+			"Assisters": [],
+			"EventID": 11,
+			"EventName": "TurretKilled",
+			"EventTime": 907.3910522460938,
+			"KillerName": "krownetic",
+			"TurretKilled": "Turret_T2_C_04_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 12,
+			"EventName": "TurretKilled",
+			"EventTime": 919.1528930664063,
+			"KillerName": "krownetic",
+			"TurretKilled": "Turret_T2_C_03_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 13,
+			"EventName": "InhibKilled",
+			"EventTime": 932.6971435546875,
+			"InhibKilled": "Barracks_T2_C1",
+			"KillerName": "krownetic"
+		},
+		{
+			"Assisters": [],
+			"EventID": 14,
+			"EventName": "ChampionKill",
+			"EventTime": 981.2567749023438,
+			"KillerName": "Wukong Bot",
+			"VictimName": "krownetic"
+		},
+		{
+			"Acer": "Wukong Bot",
+			"AcingTeam": "CHAOS",
+			"EventID": 15,
+			"EventName": "Ace",
+			"EventTime": 981.2567749023438
+		},
+		{
+			"Assisters": [],
+			"DragonType": "Hextech",
+			"EventID": 16,
+			"EventName": "DragonKill",
+			"EventTime": 1018.5009155273438,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		},
+		{
+			"Assisters": [],
+			"EventID": 17,
+			"EventName": "TurretKilled",
+			"EventTime": 1136.24169921875,
+			"KillerName": "Minion_T100L1S32N0198",
+			"TurretKilled": "Turret_T2_C_01_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 18,
+			"EventName": "TurretKilled",
+			"EventTime": 1150.6075439453126,
+			"KillerName": "Minion_T100L0S34N0213",
+			"TurretKilled": "Turret_T2_R_03_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 19,
+			"EventName": "TurretKilled",
+			"EventTime": 1199.211669921875,
+			"KillerName": "Minion_T100L1S35N0219",
+			"TurretKilled": "Turret_T2_C_02_A"
+		},
+		{
+			"EventID": 20,
+			"EventName": "InhibRespawningSoon",
+			"EventTime": 1217.6920166015626,
+			"InhibRespawningSoon": "Barracks_T2_C1"
+		},
+		{
+			"Assisters": [],
+			"EventID": 21,
+			"EventName": "TurretKilled",
+			"EventTime": 1220.8994140625,
+			"KillerName": "Minion_T100L0S34N0214",
+			"TurretKilled": "Turret_T2_R_02_A"
+		},
+		{
+			"EventID": 22,
+			"EventName": "InhibRespawned",
+			"EventTime": 1232.751708984375,
+			"InhibRespawned": "Barracks_T2_C1"
+		},
+		{
+			"Assisters": [],
+			"EventID": 23,
+			"EventName": "BaronKill",
+			"EventTime": 1238.34814453125,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		},
+		{
+			"Assisters": [],
+			"EventID": 24,
+			"EventName": "TurretKilled",
+			"EventTime": 1264.720458984375,
+			"KillerName": "Minion_T100L0S36N0226",
+			"TurretKilled": "Turret_T2_R_01_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 25,
+			"EventName": "InhibKilled",
+			"EventTime": 1277.2451171875,
+			"InhibKilled": "Barracks_T2_C1",
+			"KillerName": "Minion_T100L1S40N0255"
+		},
+		{
+			"Assisters": [],
+			"EventID": 26,
+			"EventName": "TurretKilled",
+			"EventTime": 1280.7060546875,
+			"KillerName": "Minion_T100L2S40N0253",
+			"TurretKilled": "Turret_T2_L_03_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 27,
+			"EventName": "InhibKilled",
+			"EventTime": 1283.4609375,
+			"InhibKilled": "Barracks_T2_R1",
+			"KillerName": "krownetic"
+		},
+		{
+			"Assisters": [],
+			"EventID": 28,
+			"EventName": "TurretKilled",
+			"EventTime": 1333.3077392578126,
+			"KillerName": "krownetic",
+			"TurretKilled": "Turret_T2_L_02_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 29,
+			"EventName": "ChampionKill",
+			"EventTime": 1338.463134765625,
+			"KillerName": "krownetic",
+			"VictimName": "Wukong Bot"
+		},
+		{
+			"Assisters": [],
+			"EventID": 30,
+			"EventName": "TurretKilled",
+			"EventTime": 1356.8594970703126,
+			"KillerName": "krownetic",
+			"TurretKilled": "Turret_T2_L_01_A"
+		},
+		{
+			"Assisters": [],
+			"EventID": 31,
+			"EventName": "InhibKilled",
+			"EventTime": 1367.4176025390626,
+			"InhibKilled": "Barracks_T2_L1",
+			"KillerName": "krownetic"
+		},
+		{
+			"Assisters": [],
+			"DragonType": "Water",
+			"EventID": 32,
+			"EventName": "DragonKill",
+			"EventTime": 1384.9111328125,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		},
+		{
+			"EventID": 33,
+			"EventName": "InhibRespawningSoon",
+			"EventTime": 1562.3341064453126,
+			"InhibRespawningSoon": "Barracks_T2_C1"
+		},
+		{
+			"EventID": 34,
+			"EventName": "InhibRespawningSoon",
+			"EventTime": 1568.527099609375,
+			"InhibRespawningSoon": "Barracks_T2_R1"
+		},
+		{
+			"EventID": 35,
+			"EventName": "InhibRespawned",
+			"EventTime": 1577.8790283203126,
+			"InhibRespawned": "Barracks_T2_C1"
+		},
+		{
+			"EventID": 36,
+			"EventName": "InhibRespawned",
+			"EventTime": 1584.56103515625,
+			"InhibRespawned": "Barracks_T2_R1"
+		},
+		{
+			"EventID": 37,
+			"EventName": "InhibRespawningSoon",
+			"EventTime": 1652.538330078125,
+			"InhibRespawningSoon": "Barracks_T2_L1"
+		},
+		{
+			"EventID": 38,
+			"EventName": "InhibRespawned",
+			"EventTime": 1668.134521484375,
+			"InhibRespawned": "Barracks_T2_L1"
+		},
+		{
+			"Assisters": [],
+			"DragonType": "Water",
+			"EventID": 39,
+			"EventName": "DragonKill",
+			"EventTime": 1698.6357421875,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		},
+		{
+			"Assisters": [],
+			"DragonType": "Elder",
+			"EventID": 40,
+			"EventName": "DragonKill",
+			"EventTime": 2115.34619140625,
+			"KillerName": "krownetic",
+			"Stolen": "False"
+		}
+	]
+}

@@ -1,0 +1,9 @@
+__pycache__/
+data/match_cache/
+data/ml/
+data/ml_input/
+data/ml_output/
+data/timeline_cache/
+data/matches.txt
+data/users.txt
+.vscode/

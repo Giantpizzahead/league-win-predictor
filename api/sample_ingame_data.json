@@ -1,0 +1,529 @@
+{
+    "activePlayer": {
+      "abilities": {
+        "E": {
+          "abilityLevel": 1,
+          "displayName": "Charm",
+          "id": "AhriSeduce",
+          "rawDescription": "GeneratedTip_Spell_AhriSeduce_Description",
+          "rawDisplayName": "GeneratedTip_Spell_AhriSeduce_DisplayName"
+        },
+        "Passive": {
+          "displayName": "Essence Theft",
+          "id": "AhriPassive",
+          "rawDescription": "GeneratedTip_Passive_AhriPassive_Description",
+          "rawDisplayName": "GeneratedTip_Passive_AhriPassive_DisplayName"
+        },
+        "Q": {
+          "abilityLevel": 3,
+          "displayName": "Orb of Deception",
+          "id": "AhriOrbofDeception",
+          "rawDescription": "GeneratedTip_Spell_AhriOrbofDeception_Description",
+          "rawDisplayName": "GeneratedTip_Spell_AhriOrbofDeception_DisplayName"
+        },
+        "R": {
+          "abilityLevel": 0,
+          "displayName": "Spirit Rush",
+          "id": "AhriTumble",
+          "rawDescription": "GeneratedTip_Spell_AhriTumble_Description",
+          "rawDisplayName": "GeneratedTip_Spell_AhriTumble_DisplayName"
+        },
+        "W": {
+          "abilityLevel": 1,
+          "displayName": "Fox-Fire",
+          "id": "AhriFoxFire",
+          "rawDescription": "GeneratedTip_Spell_AhriFoxFire_Description",
+          "rawDisplayName": "GeneratedTip_Spell_AhriFoxFire_DisplayName"
+        }
+      },
+      "championStats": {
+        "abilityHaste": 0,
+        "abilityPower": 26,
+        "armor": 28.815000534057617,
+        "armorPenetrationFlat": 0,
+        "armorPenetrationPercent": 1,
+        "attackDamage": 62.27000045776367,
+        "attackRange": 550,
+        "attackSpeed": 0.7760823965072632,
+        "bonusArmorPenetrationPercent": 1,
+        "bonusMagicPenetrationPercent": 1,
+        "critChance": 0,
+        "critDamage": 175,
+        "currentHealth": 0,
+        "healShieldPower": 0,
+        "healthRegenRate": 0.8708000183105469,
+        "lifeSteal": 0,
+        "magicLethality": 0,
+        "magicPenetrationFlat": 0,
+        "magicPenetrationPercent": 1,
+        "magicResist": 39.54499816894531,
+        "maxHealth": 823.3800048828125,
+        "moveSpeed": 330,
+        "omnivamp": 0,
+        "physicalLethality": 0,
+        "physicalVamp": 0,
+        "resourceMax": 495.25,
+        "resourceRegenRate": 2.094399929046631,
+        "resourceType": "MANA",
+        "resourceValue": 315.5373840332031,
+        "spellVamp": 0,
+        "tenacity": 0
+      },
+      "currentGold": 1545.404296875,
+      "fullRunes": {
+        "generalRunes": [
+          {
+            "displayName": "Electrocute",
+            "id": 8112,
+            "rawDescription": "perk_tooltip_Electrocute",
+            "rawDisplayName": "perk_displayname_Electrocute"
+          },
+          {
+            "displayName": "Taste of Blood",
+            "id": 8139,
+            "rawDescription": "perk_tooltip_TasteOfBlood",
+            "rawDisplayName": "perk_displayname_TasteOfBlood"
+          },
+          {
+            "displayName": "Eyeball Collection",
+            "id": 8138,
+            "rawDescription": "perk_tooltip_EyeballCollection",
+            "rawDisplayName": "perk_displayname_EyeballCollection"
+          },
+          {
+            "displayName": "Ultimate Hunter",
+            "id": 8106,
+            "rawDescription": "perk_tooltip_UltimateHunter",
+            "rawDisplayName": "perk_displayname_UltimateHunter"
+          },
+          {
+            "displayName": "Biscuit Delivery",
+            "id": 8345,
+            "rawDescription": "perk_tooltip_BiscuitDelivery",
+            "rawDisplayName": "perk_displayname_BiscuitDelivery"
+          },
+          {
+            "displayName": "Time Warp Tonic",
+            "id": 8352,
+            "rawDescription": "perk_tooltip_TimeWarpTonic",
+            "rawDisplayName": "perk_displayname_TimeWarpTonic"
+          }
+        ],
+        "keystone": {
+          "displayName": "Electrocute",
+          "id": 8112,
+          "rawDescription": "perk_tooltip_Electrocute",
+          "rawDisplayName": "perk_displayname_Electrocute"
+        },
+        "primaryRuneTree": {
+          "displayName": "Domination",
+          "id": 8100,
+          "rawDescription": "perkstyle_tooltip_7200",
+          "rawDisplayName": "perkstyle_displayname_7200"
+        },
+        "secondaryRuneTree": {
+          "displayName": "Inspiration",
+          "id": 8300,
+          "rawDescription": "perkstyle_tooltip_7203",
+          "rawDisplayName": "perkstyle_displayname_7203"
+        },
+        "statRunes": [
+          {
+            "id": 5005,
+            "rawDescription": "perk_tooltip_StatModAttackSpeed"
+          },
+          {
+            "id": 5008,
+            "rawDescription": "perk_tooltip_StatModAdaptive"
+          },
+          {
+            "id": 5003,
+            "rawDescription": "perk_tooltip_StatModMagicResist"
+          }
+        ]
+      },
+      "level": 5,
+      "summonerName": "krownetic",
+      "teamRelativeColors": true
+    },
+    "allPlayers": [
+      {
+        "championName": "Ahri",
+        "isBot": false,
+        "isDead": true,
+        "items": [
+          {
+            "canUse": false,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Doran's Ring",
+            "itemID": 1056,
+            "price": 400,
+            "rawDescription": "GeneratedTip_Item_1056_Description",
+            "rawDisplayName": "Item_1056_Name",
+            "slot": 0
+          },
+          {
+            "canUse": true,
+            "consumable": true,
+            "count": 2,
+            "displayName": "Health Potion",
+            "itemID": 2003,
+            "price": 50,
+            "rawDescription": "GeneratedTip_Item_2003_Description",
+            "rawDisplayName": "Item_2003_Name",
+            "slot": 1
+          },
+          {
+            "canUse": true,
+            "consumable": true,
+            "count": 3,
+            "displayName": "Total Biscuit of Everlasting Will",
+            "itemID": 2010,
+            "price": 50,
+            "rawDescription": "GeneratedTip_Item_2010_Description",
+            "rawDisplayName": "Item_2010_Name",
+            "slot": 2
+          },
+          {
+            "canUse": true,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Stealth Ward",
+            "itemID": 3340,
+            "price": 0,
+            "rawDescription": "GeneratedTip_Item_3340_Description",
+            "rawDisplayName": "Item_3340_Name",
+            "slot": 6
+          }
+        ],
+        "level": 5,
+        "position": "",
+        "rawChampionName": "game_character_displayname_Ahri",
+        "respawnTimer": 10.0562744140625,
+        "runes": {
+          "keystone": {
+            "displayName": "Electrocute",
+            "id": 8112,
+            "rawDescription": "perk_tooltip_Electrocute",
+            "rawDisplayName": "perk_displayname_Electrocute"
+          },
+          "primaryRuneTree": {
+            "displayName": "Domination",
+            "id": 8100,
+            "rawDescription": "perkstyle_tooltip_7200",
+            "rawDisplayName": "perkstyle_displayname_7200"
+          },
+          "secondaryRuneTree": {
+            "displayName": "Inspiration",
+            "id": 8300,
+            "rawDescription": "perkstyle_tooltip_7203",
+            "rawDisplayName": "perkstyle_displayname_7203"
+          }
+        },
+        "scores": {
+          "assists": 0,
+          "creepScore": 20,
+          "deaths": 1,
+          "kills": 1,
+          "wardScore": 0
+        },
+        "skinID": 0,
+        "summonerName": "krownetic",
+        "summonerSpells": {
+          "summonerSpellOne": {
+            "displayName": "Flash",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerFlash_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerFlash_DisplayName"
+          },
+          "summonerSpellTwo": {
+            "displayName": "Ignite",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+          }
+        },
+        "team": "ORDER"
+      },
+      {
+        "championName": "Brand",
+        "isBot": true,
+        "isDead": false,
+        "items": [
+          {
+            "canUse": false,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Spellthief's Edge",
+            "itemID": 3850,
+            "price": 400,
+            "rawDescription": "GeneratedTip_Item_3850_Description",
+            "rawDisplayName": "Item_3850_Name",
+            "slot": 0
+          },
+          {
+            "canUse": true,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Stealth Ward",
+            "itemID": 3340,
+            "price": 0,
+            "rawDescription": "GeneratedTip_Item_3340_Description",
+            "rawDisplayName": "Item_3340_Name",
+            "slot": 6
+          }
+        ],
+        "level": 6,
+        "position": "",
+        "rawChampionName": "game_character_displayname_Brand",
+        "respawnTimer": 0,
+        "runes": {
+          "keystone": {
+            "displayName": "Arcane Comet",
+            "id": 8229,
+            "rawDescription": "perk_tooltip_ArcaneComet",
+            "rawDisplayName": "perk_displayname_ArcaneComet"
+          },
+          "primaryRuneTree": {
+            "displayName": "Sorcery",
+            "id": 8200,
+            "rawDescription": "perkstyle_tooltip_7202",
+            "rawDisplayName": "perkstyle_displayname_7202"
+          },
+          "secondaryRuneTree": {
+            "displayName": "Domination",
+            "id": 8100,
+            "rawDescription": "perkstyle_tooltip_7200",
+            "rawDisplayName": "perkstyle_displayname_7200"
+          }
+        },
+        "scores": {
+          "assists": 1,
+          "creepScore": 20,
+          "deaths": 0,
+          "kills": 0,
+          "wardScore": 0
+        },
+        "skinID": 0,
+        "summonerName": "Brand Bot",
+        "summonerSpells": {
+          "summonerSpellOne": {
+            "displayName": "Ignite",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+          },
+          "summonerSpellTwo": {
+            "displayName": "Exhaust",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerExhaust_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerExhaust_DisplayName"
+          }
+        },
+        "team": "ORDER"
+      },
+      {
+        "championName": "Alistar",
+        "isBot": true,
+        "isDead": true,
+        "items": [
+          {
+            "canUse": false,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Relic Shield",
+            "itemID": 3858,
+            "price": 400,
+            "rawDescription": "GeneratedTip_Item_3858_Description",
+            "rawDisplayName": "Item_3858_Name",
+            "slot": 0
+          },
+          {
+            "canUse": false,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Boots",
+            "itemID": 1001,
+            "price": 300,
+            "rawDescription": "GeneratedTip_Item_1001_Description",
+            "rawDisplayName": "Item_1001_Name",
+            "slot": 1
+          },
+          {
+            "canUse": true,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Stealth Ward",
+            "itemID": 3340,
+            "price": 0,
+            "rawDescription": "GeneratedTip_Item_3340_Description",
+            "rawDisplayName": "Item_3340_Name",
+            "slot": 6
+          }
+        ],
+        "level": 5,
+        "position": "",
+        "rawChampionName": "game_character_displayname_Alistar",
+        "respawnTimer": 0.2185535430908203,
+        "runes": {
+          "keystone": {
+            "displayName": "Grasp of the Undying",
+            "id": 8437,
+            "rawDescription": "perk_tooltip_GraspOfTheUndying",
+            "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+          },
+          "primaryRuneTree": {
+            "displayName": "Resolve",
+            "id": 8400,
+            "rawDescription": "perkstyle_tooltip_7204",
+            "rawDisplayName": "perkstyle_displayname_7204"
+          },
+          "secondaryRuneTree": {
+            "displayName": "Sorcery",
+            "id": 8200,
+            "rawDescription": "perkstyle_tooltip_7202",
+            "rawDisplayName": "perkstyle_displayname_7202"
+          }
+        },
+        "scores": {
+          "assists": 0,
+          "creepScore": 10,
+          "deaths": 1,
+          "kills": 1,
+          "wardScore": 0
+        },
+        "skinID": 0,
+        "summonerName": "Alistar Bot",
+        "summonerSpells": {
+          "summonerSpellOne": {
+            "displayName": "Heal",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerHeal_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHeal_DisplayName"
+          },
+          "summonerSpellTwo": {
+            "displayName": "Exhaust",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerExhaust_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerExhaust_DisplayName"
+          }
+        },
+        "team": "CHAOS"
+      },
+      {
+        "championName": "Malphite",
+        "isBot": true,
+        "isDead": false,
+        "items": [
+          {
+            "canUse": false,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Doran's Shield",
+            "itemID": 1054,
+            "price": 450,
+            "rawDescription": "GeneratedTip_Item_1054_Description",
+            "rawDisplayName": "Item_1054_Name",
+            "slot": 0
+          },
+          {
+            "canUse": true,
+            "consumable": false,
+            "count": 1,
+            "displayName": "Stealth Ward",
+            "itemID": 3340,
+            "price": 0,
+            "rawDescription": "GeneratedTip_Item_3340_Description",
+            "rawDisplayName": "Item_3340_Name",
+            "slot": 6
+          }
+        ],
+        "level": 6,
+        "position": "",
+        "rawChampionName": "game_character_displayname_Malphite",
+        "respawnTimer": 0,
+        "runes": {
+          "keystone": {
+            "displayName": "Grasp of the Undying",
+            "id": 8437,
+            "rawDescription": "perk_tooltip_GraspOfTheUndying",
+            "rawDisplayName": "perk_displayname_GraspOfTheUndying"
+          },
+          "primaryRuneTree": {
+            "displayName": "Resolve",
+            "id": 8400,
+            "rawDescription": "perkstyle_tooltip_7204",
+            "rawDisplayName": "perkstyle_displayname_7204"
+          },
+          "secondaryRuneTree": {
+            "displayName": "Sorcery",
+            "id": 8200,
+            "rawDescription": "perkstyle_tooltip_7202",
+            "rawDisplayName": "perkstyle_displayname_7202"
+          }
+        },
+        "scores": {
+          "assists": 0,
+          "creepScore": 30,
+          "deaths": 0,
+          "kills": 0,
+          "wardScore": 0
+        },
+        "skinID": 0,
+        "summonerName": "Malphite Bot",
+        "summonerSpells": {
+          "summonerSpellOne": {
+            "displayName": "Ghost",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerHaste_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerHaste_DisplayName"
+          },
+          "summonerSpellTwo": {
+            "displayName": "Ignite",
+            "rawDescription": "GeneratedTip_SummonerSpell_SummonerDot_Description",
+            "rawDisplayName": "GeneratedTip_SummonerSpell_SummonerDot_DisplayName"
+          }
+        },
+        "team": "CHAOS"
+      }
+    ],
+    "events": {
+      "Events": [
+        {
+          "EventID": 0,
+          "EventName": "GameStart",
+          "EventTime": 0.03679490089416504
+        },
+        {
+          "EventID": 1,
+          "EventName": "MinionsSpawning",
+          "EventTime": 65.12512969970703
+        },
+        {
+          "Assisters": [
+            "Brand Bot"
+          ],
+          "EventID": 2,
+          "EventName": "ChampionKill",
+          "EventTime": 381.0823974609375,
+          "KillerName": "krownetic",
+          "VictimName": "Alistar Bot"
+        },
+        {
+          "EventID": 3,
+          "EventName": "FirstBlood",
+          "EventTime": 381.0823974609375,
+          "Recipient": "krownetic"
+        },
+        {
+          "Assisters": [],
+          "EventID": 4,
+          "EventName": "ChampionKill",
+          "EventTime": 390.9201354980469,
+          "KillerName": "Alistar Bot",
+          "VictimName": "krownetic"
+        }
+      ]
+    },
+    "gameData": {
+      "gameMode": "CLASSIC",
+      "gameTime": 394.8638610839844,
+      "mapName": "Map11",
+      "mapNumber": 11,
+      "mapTerrain": "Default"
+    }
+  }
