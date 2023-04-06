@@ -55,7 +55,8 @@ def gen_input(all_data):
         curr_champ = player_data[i]['championName'].lower()
         curr_champ = re.compile('[^a-z]').sub('', curr_champ)
         if curr_champ not in champ_ratings:
-            raise Exception(f'{curr_champ} not in champ_ratings!')
+            print(f'Warning: {curr_champ} not in champ_ratings, defaulting to Annie')
+            curr_champ = 'annie'
         if player_data[i]['team'] == 'ORDER':
             champ_data[curr_blue] = champ_ratings[curr_champ]
             curr_blue += 1

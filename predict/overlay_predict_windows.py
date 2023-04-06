@@ -17,6 +17,9 @@ import time
 from predict import predict
 from sklearn.linear_model import LogisticRegression
 
+# Amount to scale the UI by (Higher values = Bigger size)
+scaling_factor = 0.7
+
 user32 = ctypes.WinDLL("user32")
 user32.SetWindowPos.restype = wintypes.HWND
 user32.SetWindowPos.argtypes = [wintypes.HWND, wintypes.HWND, wintypes.INT, wintypes.INT, wintypes.INT, wintypes.INT, wintypes.UINT]
@@ -24,10 +27,10 @@ SetWindowPos = user32.SetWindowPos
 
 display_width = win32api.GetSystemMetrics(0)
 display_height = win32api.GetSystemMetrics(1)
-width = 200
-height = 86
+width = round(200*scaling_factor)
+height = round(86*scaling_factor)
 offset_x = display_width - width - 5
-offset_y = 75
+offset_y = 44
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (offset_x, offset_y)
 
 pygame.init()
@@ -44,13 +47,13 @@ win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*fuchsia), 0, win32con.LW
 SetWindowPos(pygame.display.get_wm_info()['window'], -1, offset_x, offset_y, 0, 0, 0x0001)
 
 # print(pygame.font.match_font("segoeuiblack"))
-font_1 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', 20)
-font_2 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', 48)
+font_1 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(20*scaling_factor))
+font_2 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(48*scaling_factor))
 title = font_1.render('Win Prediction', True, (200, 200, 200))
 titleRect = title.get_rect()
-titleRect.center = (width / 2, height / 2 - 25)
+titleRect.center = (width / 2, height / 2 - round(25*scaling_factor))
 
-disp_batch = 1000
+disp_batch = 1000//100
 past_predictions = [0.5 for _ in range(disp_batch)]
 win_prediction = 0.5
 is_on_blue = True
@@ -71,7 +74,8 @@ def gen_input(all_data):
         curr_champ = player_data[i]['championName'].lower()
         curr_champ = re.compile('[^a-z]').sub('', curr_champ)
         if curr_champ not in champ_ratings:
-            raise Exception(f'{curr_champ} not in champ_ratings!')
+            print(f'Warning: {curr_champ} not in champ_ratings, defaulting to Annie')
+            curr_champ = 'annie'
         if player_data[i]['team'] == 'ORDER':
             champ_data[curr_blue] = champ_ratings[curr_champ]
             curr_blue += 1
@@ -203,7 +207,7 @@ while not done:
     color = (min((1-displayed_pred) * 350, 255), min(displayed_pred * 350, 255), 0)
     textChance = font_2.render(f'{displayed_pred*100:.1f}%', True, color)
     textChanceRect = textChance.get_rect()
-    textChanceRect.center = (width / 2, height / 2 + 11)
+    textChanceRect.center = (width / 2, height / 2 + round(11*scaling_factor))
     screen.blit(textChance, textChanceRect)
     pygame.display.update()
 
