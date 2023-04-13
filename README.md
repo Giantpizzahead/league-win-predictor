@@ -1,6 +1,6 @@
-# League Win Probability
+# League Win Predictor
 
-*The only objective way to ff15*
+*The only\* objective way to ff15*
 
 You know those "who's winning" bars for games like Chess? Well, here's one for League of Legends! (Sort of.)
 
@@ -15,13 +15,9 @@ You know those "who's winning" bars for games like Chess? Well, here's one for L
 ![Example Tossup](results/exampletossup.jpg)
 *Tossup (Maybe mid can carry... spoiler: nope)*
 
-## Development Setup
+## Installation
 
-Warning: This project is very messy, there are lots of unused/old files everywhere and the Mac overlay (probably) doesn't work. Clone at your own risk!
-
-See `requirements.txt` for a list of dependencies.
-
-Run **overlay_predict_windows.py** or **overlay_predict_mac.py** to start the widget, depending on your OS.
+Run this installer. (This app only works on Windows. Sorry Mac gamers :/)
 
 ## About
 
@@ -49,3 +45,11 @@ Overall, the model's accuracy rate is about **73%**. However, this is not equall
 
 ![Logictic Regression V4 Results](results/logisticregv4.jpg)
 *Fancy graphs!*
+
+## Development Setup
+
+Warning: This project is very messy, there are lots of unused/old files everywhere and the Mac overlay (probably) doesn't work. Clone at your own risk!
+
+See `requirements.txt` for a list of dependencies.
+
+Run **overlay_predict_windows.py** or **overlay_predict_mac.py** to start the widget, depending on your OS.
