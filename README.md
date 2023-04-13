@@ -6,8 +6,7 @@ You know those "who's winning" bars for games like Chess? Well, here's one for L
 
 ## Demo
 
-![Video demo](https://i.gyazo.com/dfe958290a0a78d46770ed55c15ae6eb.gif)
-*Do Co-op vs. AI bots have souls?*
+[Brief Video Demo](https://i.gyazo.com/dfe958290a0a78d46770ed55c15ae6eb.mp4) *(Do Co-op vs. AI bots have souls?)*
 
 ![Example Losing](results/examplelosing.jpg)
 *Inting on Tristana*
