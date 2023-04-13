@@ -8,11 +8,11 @@ You know those "who's winning" bars for games like Chess? Well, here's one for L
 
 [Brief Video Demo](https://i.gyazo.com/dfe958290a0a78d46770ed55c15ae6eb.mp4) *(Do Co-op vs. AI bots have souls?)*
 
-![Example Losing](results/examplelosing.jpg)
-*Inting on Tristana*
-
 ![Example Winning](results/examplewinning.jpg)
 *Popping off on Ahri*
+
+![Example Losing](results/examplelosing.jpg)
+*Inting on Tristana*
 
 ![Example Tossup](results/exampletossup.jpg)
 *Tossup (Maybe mid can carry... spoiler: nope)*
