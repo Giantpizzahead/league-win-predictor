@@ -22,9 +22,10 @@ DefaultDirName={autopf}\{#MyAppName}
 DisableProgramGroupPage=yes
 LicenseFile=C:\Users\sunny\OneDrive\Documents\GitHub\league-win-probability\LICENSE
 ; Uncomment the following line to run in non administrative install mode (install for current user only.)
-;PrivilegesRequired=lowest
-OutputDir=C:\Users\sunny\OneDrive\Documents\GitHub\league-win-probability\dist
+;PrivilegesRequired=lowest                                                      
+OutputDir=C:\Users\sunny\OneDrive\Documents\GitHub\league-win-probability\dist       
 OutputBaseFilename=LeagueWinPredictor
+SetupIconFile=C:\Users\sunny\OneDrive\Documents\GitHub\league-win-probability\icon.ico
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
