@@ -15,17 +15,13 @@ You know those "who's winning" bars for games like Chess? Well, here's one for L
 ![Example Tossup](results/exampletossup.jpg)
 *Tossup (Maybe mid can carry... spoiler: nope)*
 
-## Setup
+## Development Setup
 
-You'll need Python 3 installed, along with a bunch of libraries. Ngl I'm too lazy to make an install list, but I know there are only a few... So I guess if you really want this thing, you can do a bit of trial and error in a virtual environment.
+Warning: This project is very messy, there are lots of unused/old files everywhere and the Mac overlay (probably) doesn't work. Clone at your own risk!
 
-Install list:
-- pygame
-- scikit-learn
-- requests
-- pywin32
+See `requirements.txt` for a list of dependencies.
 
-Run **overlay_predict_windows.py** or **overlay_predict_mac.py** to start the widget, depending on your OS. (Note: These scripts have not been thoroughly tested!)
+Run **overlay_predict_windows.py** or **overlay_predict_mac.py** to start the widget, depending on your OS.
 
 ## About
 

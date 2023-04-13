@@ -1,4 +1,8 @@
-# ONLY WORKS ON MAC
+"""
+Shows an overlay on the top right of the screen containing the win prediction for the current game.
+
+WARNING: THIS SCRIPT HAS NOT BEEN TESTED FOR A VERY LONG TIME AND PROBABLY DOESN'T WORK :(
+"""
 
 import pygame
 import os

@@ -1,7 +1,9 @@
-# ONLY WORKS ON WINDOWS
+"""
+Shows an overlay on the top right of the screen containing the win prediction for the current game.
 
-from inspect import trace
-from mimetypes import types_map
+Only works on Windows.
+"""
+
 import pygame
 import win32api
 import win32con
@@ -15,10 +17,8 @@ import requests
 import pickle
 import time
 from predict import predict
-from sklearn.linear_model import LogisticRegression
-
-# Amount to scale the UI by (Higher values = Bigger size)
-scaling_factor = 0.7
+import urllib3
+import sklearn
 
 user32 = ctypes.WinDLL("user32")
 user32.SetWindowPos.restype = wintypes.HWND
@@ -27,8 +27,11 @@ SetWindowPos = user32.SetWindowPos
 
 display_width = win32api.GetSystemMetrics(0)
 display_height = win32api.GetSystemMetrics(1)
-width = round(200*scaling_factor)
-height = round(86*scaling_factor)
+
+# Amount to scale the UI by (Higher values = Bigger size)
+SCALING_FACTOR = min(display_width / 2560, display_height / 1440)
+width = round(200*SCALING_FACTOR)
+height = round(86*SCALING_FACTOR)
 offset_x = display_width - width - 5
 offset_y = 44
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (offset_x, offset_y)
@@ -37,6 +40,8 @@ pygame.init()
 screen = pygame.display.set_mode((width, height), pygame.NOFRAME)
 done = False
 fuchsia = (255, 0, 128)  # Transparency color
+
+urllib3.disable_warnings()
 
 # Create layered window
 hwnd = pygame.display.get_wm_info()["window"]
@@ -47,13 +52,13 @@ win32gui.SetLayeredWindowAttributes(hwnd, win32api.RGB(*fuchsia), 0, win32con.LW
 SetWindowPos(pygame.display.get_wm_info()['window'], -1, offset_x, offset_y, 0, 0, 0x0001)
 
 # print(pygame.font.match_font("segoeuiblack"))
-font_1 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(20*scaling_factor))
-font_2 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(48*scaling_factor))
+font_1 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(20*SCALING_FACTOR))
+font_2 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(48*SCALING_FACTOR))
 title = font_1.render('Win Prediction', True, (200, 200, 200))
 titleRect = title.get_rect()
-titleRect.center = (width / 2, height / 2 - round(25*scaling_factor))
+titleRect.center = (width / 2, height / 2 - round(25*SCALING_FACTOR))
 
-disp_batch = 1000//100
+disp_batch = 1000
 past_predictions = [0.5 for _ in range(disp_batch)]
 win_prediction = 0.5
 is_on_blue = True
@@ -74,8 +79,8 @@ def gen_input(all_data):
         curr_champ = player_data[i]['championName'].lower()
         curr_champ = re.compile('[^a-z]').sub('', curr_champ)
         if curr_champ not in champ_ratings:
-            print(f'Warning: {curr_champ} not in champ_ratings, defaulting to Annie')
-            curr_champ = 'annie'
+            print(f'Warning: {curr_champ} not in champ_ratings, defaulting to Jarvan IV')
+            curr_champ = 'jarvaniv'
         if player_data[i]['team'] == 'ORDER':
             champ_data[curr_blue] = champ_ratings[curr_champ]
             curr_blue += 1
@@ -160,6 +165,22 @@ def gen_input(all_data):
         blue_v = sum([v[i] for v in champ_data[:5]])
         red_v = sum([v[i] for v in champ_data[5:]])
         x += [blue_v, red_v]
+    
+    # Print a detailed breakdown of the input for debugging
+    print(f'\nINPUT ({round(game_time)//60}:{round(game_time)%60:02d})')
+    print(f'Order')
+    print(f'  Turrets taken: {curr_buildings[0][0]} outer, {curr_buildings[0][1]} inner, {curr_buildings[0][2]} base, {curr_buildings[0][3]} inhib, {curr_buildings[0][4]} nexus')
+    print(f'  Monsters killed: {curr_monsters[0][0]} heralds, {curr_monsters[0][1]} dragons, {curr_monsters[0][2]} barons')
+    print(f'  Players:')
+    for i in range(len(team_names[0])):
+        print(f'    {team_names[0][i]} - Level {players[i][0]}, {players[i][1]} CS, {players[i][2]}/{players[i][3]}/{players[i][4]} KDA')
+    print(f'Chaos')
+    print(f'  Turrets taken: {curr_buildings[1][0]} outer, {curr_buildings[1][1]} inner, {curr_buildings[1][2]} base, {curr_buildings[1][3]} inhib, {curr_buildings[1][4]} nexus')
+    print(f'  Monsters killed: {curr_monsters[1][0]} heralds, {curr_monsters[1][1]} dragons, {curr_monsters[1][2]} barons')
+    print(f'  Players:')
+    for i in range(len(team_names[1])):
+        print(f'    {team_names[1][i]} - Level {players[i+5][0]}, {players[i+5][1]} CS, {players[i+5][2]}/{players[i+5][3]}/{players[i+5][4]} KDA')
+    
     return x
 
 clock = pygame.time.Clock()
@@ -172,17 +193,15 @@ while not done:
     # Get current win prediction
     if time.time() - last_update > 3:
         try:
-            # TODO: Maybe don't have False for verifying HTTPS connections
             all_data = json.loads(requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify=False).content)
             x = gen_input(all_data)
             win_prediction = predict(x)
-            # print(f'{win_prediction} win prediction at game time {x[0]:.3f}')
-            print(f'\n{win_prediction} win prediction with inputs:\n{x}')
+            print(f'Win Prediction: {win_prediction*100:.1f}%')
+            last_update = time.time()
         except Exception as e:
-            import traceback
-            traceback.print_exc()
             print('Connection failed, is the game open?')
-        last_update = time.time()
+            # print(e)
+            last_update = time.time() + 7
     past_predictions.append(win_prediction)
     
     # Set current win prediction to be the weighted average of the last few predictions
@@ -207,7 +226,7 @@ while not done:
     color = (min((1-displayed_pred) * 350, 255), min(displayed_pred * 350, 255), 0)
     textChance = font_2.render(f'{displayed_pred*100:.1f}%', True, color)
     textChanceRect = textChance.get_rect()
-    textChanceRect.center = (width / 2, height / 2 + round(11*scaling_factor))
+    textChanceRect.center = (width / 2, height / 2 + round(11*SCALING_FACTOR))
     screen.blit(textChance, textChanceRect)
     pygame.display.update()
 
