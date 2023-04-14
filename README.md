@@ -52,6 +52,6 @@ Overall, the model's accuracy rate is about **73%**. However, this is not equall
 
 Warning: This project is very messy, there are lots of unused/old files everywhere and the Mac overlay (probably) doesn't work. Clone at your own risk!
 
-See `requirements.txt` for a list of dependencies.
+See `misc/requirements.txt` for a list of dependencies.
 
 Run **overlay_predict_windows.py** or **overlay_predict_mac.py** to start the widget, depending on your OS.
