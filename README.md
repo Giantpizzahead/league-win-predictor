@@ -19,7 +19,7 @@ You know those "who's winning" bars for games like Chess? Well, here's one for L
 
 ## Installation
 
-Run the [installer](https://github.com/Giantpizzahead/league-win-predictor/releases/download/v1.0.0/LeagueWinPredictor.exe). (This app only works on Windows. Sorry Mac gamers :/)
+Run the [installer](https://github.com/Giantpizzahead/league-win-predictor/releases/download/v1.0.1/LeagueWinPredictor.exe). (This app only works on Windows. Sorry Mac gamers :/)
 
 ## About
 
