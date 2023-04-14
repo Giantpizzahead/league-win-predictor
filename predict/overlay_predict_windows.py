@@ -4,17 +4,20 @@ Shows an overlay on the top right of the screen containing the win prediction fo
 Only works on Windows.
 """
 
-import pygame
+import os
+os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = "hide"
+
 import win32api
 import win32con
 import win32gui
-import os
+import pygame
 import re
 import ctypes
 from ctypes import wintypes
 import json
 import requests
 import pickle
+import math
 import time
 from predict import predict
 import urllib3
@@ -29,11 +32,11 @@ display_width = win32api.GetSystemMetrics(0)
 display_height = win32api.GetSystemMetrics(1)
 
 # Amount to scale the UI by (Higher values = Bigger size)
-SCALING_FACTOR = min(display_width / 2560, display_height / 1440)
+SCALING_FACTOR = display_height / 1640
 width = round(200*SCALING_FACTOR)
 height = round(86*SCALING_FACTOR)
-offset_x = display_width - width - 5
-offset_y = 44
+offset_x = display_width - width - 6
+offset_y = round(83*SCALING_FACTOR)
 os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (offset_x, offset_y)
 
 pygame.init()
@@ -57,6 +60,9 @@ font_2 = pygame.font.Font('C:\WINDOWS\Fonts\seguisb.ttf', round(48*SCALING_FACTO
 title = font_1.render('Win Prediction', True, (200, 200, 200))
 titleRect = title.get_rect()
 titleRect.center = (width / 2, height / 2 - round(25*SCALING_FACTOR))
+waiting = font_1.render('Waiting for game...', True, (200, 200, 200))
+waitingRect = waiting.get_rect()
+waitingRect.center = (width / 2, height / 2)
 
 disp_batch = 1000
 past_predictions = [0.5 for _ in range(disp_batch)]
@@ -167,7 +173,7 @@ def gen_input(all_data):
         x += [blue_v, red_v]
     
     # Print a detailed breakdown of the input for debugging
-    print(f'\nINPUT ({round(game_time)//60}:{round(game_time)%60:02d})')
+    print(f'\nInput ({round(game_time)//60}:{round(game_time)%60:02d})')
     print(f'Order')
     print(f'  Turrets taken: {curr_buildings[0][0]} outer, {curr_buildings[0][1]} inner, {curr_buildings[0][2]} base, {curr_buildings[0][3]} inhib, {curr_buildings[0][4]} nexus')
     print(f'  Monsters killed: {curr_monsters[0][0]} heralds, {curr_monsters[0][1]} dragons, {curr_monsters[0][2]} barons')
@@ -183,8 +189,11 @@ def gen_input(all_data):
     
     return x
 
+print("Note: If the overlay doesn't show on top of League, try switching to borderless or windowed mode.")
+print("Ready to go. Join a game!")
 clock = pygame.time.Clock()
-last_update = -1
+last_update = time.time() - 2
+in_game = False
 while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
@@ -194,13 +203,19 @@ while not done:
     if time.time() - last_update > 3:
         try:
             all_data = json.loads(requests.get('https://127.0.0.1:2999/liveclientdata/allgamedata', verify=False).content)
-            x = gen_input(all_data)
-            win_prediction = predict(x)
+            try:
+                x = gen_input(all_data)
+                win_prediction = predict(x)
+            except KeyError:
+                print("In loading screen...")
+                win_prediction = 0.5
             print(f'Win Prediction: {win_prediction*100:.1f}%')
             last_update = time.time()
-        except Exception as e:
-            print('Connection failed, is the game open?')
-            # print(e)
+            in_game = True
+        except requests.exceptions.ConnectionError:
+            if in_game:
+                print('Connection failed, assuming the game finished')
+                in_game = False
             last_update = time.time() + 7
     past_predictions.append(win_prediction)
     
@@ -210,7 +225,10 @@ while not done:
     displayed_pred = sum([few_predictions[i] * weights[i] for i in range(disp_batch)]) / sum(weights)
     displayed_pred = min(max(displayed_pred, 0), 1)
     
-    breakpoint = width * displayed_pred
+    # Sigmoid function to make the rectangular prediction more gradual
+    sigmoid_pred = 1.1 / (1 + math.exp(-6 * (displayed_pred - 0.5))) - 0.05
+    sigmoid_pred = min(max(sigmoid_pred, 0), 1)
+    breakpoint = width * sigmoid_pred
     blue = (18, 65, 122)
     red = (122, 18, 18)
     if not is_on_blue:
@@ -222,12 +240,20 @@ while not done:
     pygame.draw.rect(screen, blue, pygame.Rect(0, 0, breakpoint, height))
     pygame.draw.rect(screen, red, pygame.Rect(breakpoint, 0, width-breakpoint, height))
     
-    screen.blit(title, titleRect)
-    color = (min((1-displayed_pred) * 350, 255), min(displayed_pred * 350, 255), 0)
-    textChance = font_2.render(f'{displayed_pred*100:.1f}%', True, color)
-    textChanceRect = textChance.get_rect()
-    textChanceRect.center = (width / 2, height / 2 + round(11*SCALING_FACTOR))
-    screen.blit(textChance, textChanceRect)
+    if in_game:
+        screen.blit(title, titleRect)
+        # pred_text = f'<<<'
+        # textPred = font_1.render(pred_text, True, (200, 200, 200))
+        # textPredRect = textPred.get_rect()
+        # textPredRect.center = (width / 2, height / 2 - round(25*SCALING_FACTOR))
+        # screen.blit(textPred, textPredRect)
+        color = (min((1-displayed_pred) * 350, 255), min(displayed_pred * 350, 255), 0)
+        textChance = font_2.render(f'{displayed_pred*100:.1f}%', True, color)
+        textChanceRect = textChance.get_rect()
+        textChanceRect.center = (width / 2, height / 2 + round(11*SCALING_FACTOR))
+        screen.blit(textChance, textChanceRect)
+    else:
+        screen.blit(waiting, waitingRect)
     pygame.display.update()
 
     clock.tick(60)
